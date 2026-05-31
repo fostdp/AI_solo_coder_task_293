@@ -1,0 +1,6 @@
+node_modules/
+public/*.js
+!public/wave-calculator.js
+dist/
+build/
+*.min.js

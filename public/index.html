@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>声音干涉图案合成器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <div class="canvas-container">
+        <canvas id="interferenceCanvas"></canvas>
+        <div class="source source1" id="source1">S1</div>
+        <div class="source source2" id="source2">S2</div>
+      </div>
+    </div>
+    
+    <div class="control-panel">
+      <h2>控制面板</h2>
+      
+      <div class="section">
+        <h3>声源 1</h3>
+        <div class="control-group">
+          <label>频率 (Hz): <span id="freq1Value">440</span></label>
+          <input type="range" id="frequency1" min="20" max="2000" value="440">
+        </div>
+        <div class="control-group">
+          <label>振幅: <span id="amp1Value">1.0</span></label>
+          <input type="range" id="amplitude1" min="0" max="2" step="0.1" value="1">
+        </div>
+      </div>
+      
+      <div class="section">
+        <h3>声源 2</h3>
+        <div class="control-group">
+          <label>频率 (Hz): <span id="freq2Value">445</span></label>
+          <input type="range" id="frequency2" min="20" max="2000" value="445">
+        </div>
+        <div class="control-group">
+          <label>振幅: <span id="amp2Value">1.0</span></label>
+          <input type="range" id="amplitude2" min="0" max="2" step="0.1" value="1">
+        </div>
+      </div>
+      
+      <div class="section">
+        <h3>音频控制</h3>
+        <button id="playBtn" class="btn btn-primary">播放声音</button>
+        <button id="stopBtn" class="btn btn-secondary">停止</button>
+        <div class="beat-info">
+          <span>拍频: <strong id="beatFrequency">5</strong> Hz</span>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h3>配置管理</h3>
+        <div class="control-group">
+          <label>配置名称</label>
+          <input type="text" id="configName" placeholder="输入配置名称">
+        </div>
+        <button id="saveBtn" class="btn btn-success">保存配置</button>
+        <button id="loadBtn" class="btn btn-info">加载配置</button>
+        <select id="configList" class="config-select"></select>
+      </div>
+    </div>
+  </div>
+  
+  <script src="wave-calculator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
